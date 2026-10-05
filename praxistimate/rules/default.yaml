@@ -1,0 +1,44 @@
+ruleset_id: kzbv-ti-2026.1
+rules:
+  - id: TI-EPA-01
+    code: EPA_NOT_READY
+    severity: error
+    message: "ePA usage / module not ready (epa_usage_ready must be true)"
+    check:
+      field: epa_usage_ready
+      equals: true
+  - id: TI-EPA-02
+    code: EPA_MODULE_OUTDATED
+    severity: error
+    message: "PVS ePA module must be 3.0 or higher"
+    check:
+      field: pvs_epa_module
+      semver_gte: "3.0"
+  - id: TI-KIM-01
+    code: KIM_VERSION_EOL
+    severity: error
+    message: "KIM must be >= 1.5 (1.0 EOL 2026-01-01)"
+    check:
+      field: kim_version
+      semver_gte: "1.5"
+  - id: TI-CON-01
+    code: CONNECTOR_PTV_LOW
+    severity: warning
+    message: "Connector should be PTV5+ until PTV6 migration"
+    check:
+      field: connector_ptv
+      in: ["PTV5", "PTV6", "TI-GATEWAY"]
+  - id: IT-390-01
+    code: BACKUP_NOT_DOCUMENTED
+    severity: error
+    message: "Backup process must be documented per KZBV IT security"
+    check:
+      field: backup_documented
+      equals: true
+  - id: IT-390-02
+    code: TRAINING_NOT_DOCUMENTED
+    severity: warning
+    message: "Staff IT security training should be documented for 2026"
+    check:
+      field: staff_it_training_2026
+      equals: true

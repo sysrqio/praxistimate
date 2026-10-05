@@ -1,0 +1,9 @@
+{
+  "practice_id": "example-praxis",
+  "pvs_epa_module": "3.0",
+  "kim_version": "1.5",
+  "connector_ptv": "PTV5",
+  "epa_usage_ready": true,
+  "backup_documented": true,
+  "staff_it_training_2026": true
+}

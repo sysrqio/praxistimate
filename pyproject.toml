@@ -1,0 +1,26 @@
+[project]
+name = "praxistimate"
+version = "0.1.0"
+description = "TI/ePA/KIM readiness audit CLI for German dental practices"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "sysrqio" }]
+dependencies = ["pyyaml>=6.0"]
+
+[project.scripts]
+praxistimate = "praxistimate.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["praxistimate*"]
+
+[tool.setuptools.package-data]
+praxistimate = ["rules/*.yaml"]
